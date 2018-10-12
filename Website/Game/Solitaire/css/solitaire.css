@@ -1,0 +1,77 @@
+/* card image dimensions */
+body {
+  margin: 1%;
+}
+
+.cardSlot {
+  display: inline-block;
+  background-image: url("../img/empty.png");
+  margin: 1em;
+  width: 150px;
+  height: 225px;
+}
+
+.cardSlot img {
+  position: relative;
+  width: 2100px;
+  height: 900px;
+}
+
+#deck {
+  clip-path: inset(75% 0% 0% 92.86%);
+  top: -675px;
+  left: -1950px;
+}
+
+#discard {
+  clip-path: inset(0% 92.86% 75% 0%);
+  opacity: 0;
+}
+
+#clubs {
+  clip-path: inset(0% 92.86% 75% 0%);
+  opacity: 0;
+}
+
+#diamonds {
+  clip-path: inset(25% 92.86% 50% 0%);
+  top: -225px;
+  opacity: 0;
+}
+
+#hearts {
+  clip-path: inset(50% 92.86% 25% 0%);
+  top: -450px;
+  opacity: 0;
+}
+
+#spades {
+  clip-path: inset(75% 92.86% 0% 0%);
+  top: -675px;
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#deck_container {
+  float: left;
+  background-color: #FFFF00;
+  width: 25%;
+}
+
+#complete_container {
+  float: right;
+  width: 50%;
+  background-color: #FF00FF;
+}
+
+#stack_container {
+  clear: left;
+  width: 100%;
+  background-color: #00FFFF;
+}
+
+

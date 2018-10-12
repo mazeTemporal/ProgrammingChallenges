@@ -1,9 +1,14 @@
 let SUITS = [
-  {name: 'Clubs', color: 'black'},
-  {name: 'Diamonds', color: 'red'},
-  {name: 'Hearts', color: 'red'},
-  {name: 'Spades', color: 'black'}
+  {name: 'clubs', color: 'black'},
+  {name: 'diamonds', color: 'red'},
+  {name: 'hearts', color: 'red'},
+  {name: 'spades', color: 'black'}
 ];
+
+let CARD_SIZE = {
+  x: 150,
+  y: 225
+};
 
 class Deck {
   constructor(){
@@ -19,7 +24,7 @@ class Deck {
   }
 
   isEmpty(){
-    return(0 == this.cardCount);
+    return(0 == this.cardCount());
   }
 
   takeCardBottom(){
@@ -214,5 +219,63 @@ class Solitaire {
       clearSelection();
     }
   }
+
+  styleElementType(element, type){
+    let card = undefined;
+    let isFaceDown = false;
+    if ('deck' === type){
+      card = this.deck.checkCardTop();
+      isFaceDown = true;
+    } else if ('discard' === type){
+      card = this.discard.checkCardTop();
+    }
+    this.styleElementCard(element, card, isFaceDown);
+  }
+
+  styleElementCard(element, card, isFaceDown = false){
+    if (undefined == card){
+      element.style.opacity = 0;
+    } else {
+      element.style.opacity = 1;
+      let clipStyle = this.makeClipStyle(card, isFaceDown);
+      element.style.clipPath = clipStyle.clipPath;
+      element.style.top = clipStyle.top;
+      element.style.left = clipStyle.left;
+    }
+  }
+
+  makeClipStyle(card, isFaceDown){
+    if (isFaceDown){
+      return({
+        clipPath: `inset(75% 0% 0% ${100 * 13/14}%)`,
+        top: `${-CARD_SIZE.y * 3}px`,
+        left: `${-CARD_SIZE.x * 13}px`
+      });
+    }
+    let suitIndex = SUITS.map((x) => {
+      return(x.name);
+    }).indexOf(card.suit.name);
+    return({
+      clipPath: 'inset(' +
+        100 * suitIndex / 4 + '% ' +
+        100 * (14 - card.number) / 14 + '% ' +
+        100 * (3 - suitIndex) / 4 + '% ' +
+        100 * (card.number - 1) / 14  + '%)',
+      top: `${-CARD_SIZE.y * suitIndex}px`,
+      left: `${-CARD_SIZE.x * (card.number - 1)}px`
+    });
+  }
 }
 
+let init = () => {
+  s = new Solitaire();
+  deck = document.getElementById('deck');
+  discard = document.getElementById('discard');
+  deck.onclick = () => {
+    s.selectDeck();
+    s.styleElementType(deck, 'deck');
+    s.styleElementType(discard, 'discard');
+  }
+}
+
+window.onload = init;

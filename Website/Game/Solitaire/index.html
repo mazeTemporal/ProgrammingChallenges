@@ -3,19 +3,52 @@
   <head>
     <meta charset="UTF-8">
     <title>Klondike Solitaire</title>
+    <link type="text/css" href="css/solitaire.css" rel="stylesheet">
+    <script type="text/javascript" src="js/solitaire.js"></script>
   </head>
   <body>
     <header>
       <!-- Game Options Menus -->
     </header>
-    <section id="deck_container">
-      <!-- Deck and Discard -->
+    <section id="topRow">
+      <section id="deck_container" class="container">
+        <span class="cardSlot">
+          <img id="deck" src="img/playingCards.svg">
+        </span>
+        <span class="cardSlot">
+          <img id="discard" src="img/playingCards.png">
+        </span>
+      </section>
+      <section id="complete_container" class="container">
+        <span class="cardSlot">
+          <img id="clubs" src="img/playingCards.png">
+        </span>
+        <span class="cardSlot">
+          <img id="diamonds" src="img/playingCards.png">
+        </span>
+        <span class="cardSlot">
+          <img id="hearts" src="img/playingCards.png">
+        </span>
+        <span class="cardSlot">
+          <img id="spades" src="img/playingCards.png">
+        </span>
+      </section>
     </section>
-    <section id="complete_container">
-      <!-- Four Completion Piles -->
-    </section>
-    <section id="stack_container">
-      <!-- Seven Play Stacks -->
+    <section id="stack_container" class="container">
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
+      <span class="cardSlot">
+      </span>
     </section>
     <footer>
       <!-- Game Status Information -->
