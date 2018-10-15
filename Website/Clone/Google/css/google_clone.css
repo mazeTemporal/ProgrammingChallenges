@@ -1,0 +1,102 @@
+/* general */
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  border: 1px solid black; /* for debug only */
+}
+.button {
+  background: #4285f4;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+/* header */
+header > * {
+  display: flex;
+  justify-content: space-between;
+}
+nav {
+  margin-left: 7%;
+  width: 35%;
+}
+
+/* search results */
+#main > * {
+  margin-left: 7%;
+}
+#result-container {
+  display: flex;
+  justify-content: flex-start;
+}
+#result-container > div:first-child {
+  width: 40%
+}
+#result-container > div:nth-child(2) {
+  width: 28%
+}
+
+/* page results */
+#result-page-container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* business results */
+#business > div > div {
+  display: flex;
+}
+#business > div > div {
+  justify-content: space-between;
+}
+
+/* related searches */
+#related > div {
+  display: flex;
+  justify-content: flex-start;
+}
+#related > div > * {
+  display: flex;
+  flex-direction: column;
+}
+
+/* pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/* company information */
+#company-title {
+  display: flex;
+  justify-content: space-between;
+}
+#company-title > *:first-child {
+  margin-right: auto;
+}
+
+/* on google */
+#on-google > div:first-child > a {
+  display: flex;
+
+}
+#google-preview > a > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* related companies */
+#company-related > div > div {
+  display: flex;
+}
+
+/* results about */
+#results-about > div > a {
+  display: flex;
+}
+
+/* footer */
+footer {
+  margin-left: 7%
+}
+
+
