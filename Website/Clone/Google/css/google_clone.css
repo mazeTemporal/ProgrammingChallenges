@@ -1,13 +1,40 @@
+/* branding color definitions */
+:root {
+  --green: #006621;
+  --gray: #545454;
+  --blue: #1a0dab;
+  --purple: #660099;
+  --black: #222222;
+  --white: #ffffff;
+}
+
 /* general */
 * {
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
   border: 1px solid black; /* for debug only */
+  text-decoration: none;
 }
-.button {
+body {
+  color: var(--gray);
+}
+a {
+  color: var(--blue);
+}
+a:visited {
+  color: var(--purple);
+}
+.button, .button:visited {
   background: #4285f4;
   padding: 0.25em 0.5em 0.25em 0.5em;
+  color: var(--white);
+}
+.subhedding, .minor-link {
+  color: var(--gray);
+}
+.text-link {
+  color: var(--black);
 }
 
 /* header */
@@ -19,6 +46,15 @@ nav {
   margin-left: 7%;
   width: 35%;
 }
+nav a, nav a:visited {
+  color: var(--gray);
+}
+nav a.selected, nav a.selected:visited {
+  color: var(--blue);
+}
+nav a:not(.selected):hover{
+  color: var(--black);
+}
 
 /* search results */
 #main > * {
@@ -29,16 +65,23 @@ nav {
   justify-content: flex-start;
 }
 #result-container > div:first-child {
-  width: 40%
+  width: 40%;
 }
 #result-container > div:nth-child(2) {
-  width: 28%
+  width: 28%;
+  color: var(--black);
+}
+strong > a, strong > a:visited {
+  color: var(--black);
 }
 
 /* page results */
 #result-page-container > div {
   display: flex;
   flex-direction: column;
+}
+.result-url {
+  color: var(--green);
 }
 
 /* business results */
@@ -47,6 +90,9 @@ nav {
 }
 #business > div > div {
   justify-content: space-between;
+}
+#business h3 {
+  color: var(--black);
 }
 
 /* related searches */
@@ -63,6 +109,7 @@ nav {
 #pagination {
   display: flex;
   justify-content: center;
+  color: var(--black);
 }
 
 /* company information */
@@ -98,5 +145,7 @@ nav {
 footer {
   margin-left: 7%
 }
-
+footer a, footer a:visited {
+  color: var(--gray);
+}
 
