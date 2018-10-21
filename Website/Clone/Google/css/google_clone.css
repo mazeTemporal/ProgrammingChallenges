@@ -45,11 +45,23 @@ a:visited {
 .text-link {
   color: var(--black);
 }
+.business-holder {
+  width: 72px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.business-holder > .image-holder {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* header */
 header > * {
   display: flex;
   justify-content: space-between;
+  background-color: rgb(250, 250, 250);
 }
 nav {
   margin-left: 7%;
@@ -127,6 +139,33 @@ strong > a, strong > a:visited {
   justify-content: center;
   color: var(--black);
 }
+#pagination .letter {
+  background-image: url(../img/icons2.png);
+  width: 20px;
+  height: 40px;
+}
+#pagination > div, #pagination a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pagination > div:last-child > a {
+  align-items: flex-end;
+}
+#pagination .g {
+  background-position-x: -24px;
+  width: 28px;
+}
+#pagination > div:nth-child(2) .o {
+  background-position-x: -53px;
+}
+#pagination .o {
+  background-position-x: -74px;
+}
+#pagination .gle {
+  background-position-x: -96px;
+  width: 71px;
+}
 
 /* company information */
 #company-title {
@@ -158,6 +197,7 @@ strong > a, strong > a:visited {
 /* related companies */
 #company-related > div > div {
   display: flex;
+  justify-content: space-between;
 }
 
 /* results about */
@@ -170,7 +210,8 @@ strong > a, strong > a:visited {
 
 /* footer */
 footer {
-  margin-left: 7%
+  margin-left: 7%;
+  background-color: rgb(250, 250, 250);
 }
 footer a, footer a:visited {
   color: var(--gray);
